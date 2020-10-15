@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    
+<h1>this is blacklist page</h1>
+
+<% if(choice == -1) { %>
+<form action="/blacklist_add">
+    <button type="submit" >blacklist a number
+ </button></form><br><br>
+
+ <form action="/blacklist_remove">
+  <button type="submit" >remove blacklist
+ </button></form>  <br><br>
+ 
+ <form action="/logout">
+    <button type="submit" >logout
+    </button></form>
+
+<%}%>
+
+<% if(choice == -2) { %>
+    
+<h2>enter the vehicle number to blacklist</h2>
+    <form action="/fun_blacklist_add" method="POST">
+
+       <h3></h3> <input type="text" name="number" ><br><br>
+        <h3></h3><input type="text" name="crime"> <br><br>
+        <h3></h3><input type="date" name = "date"> <br><br>
+        <button type="submit">blacklist this number</button>
+    </form>
+
+ <%}%>
+
+ <% if(choice == 0 ) { %>
+
+    <h1>vehicle blacklisted</h1><br><br><br>
+    <h3>the owner of the vehicle does not have any other vehicles registered in his name</h3>
+
+    <form action="/home/black">
+    <button type="submit"> go back</button>
+    </form>
+
+ <%}%>
+ <% if(choice == 1) { %>
+    <h2>the owner has <%= results.length %> vehicle other than this</h2><br>
+    <h2>owner name : <%=results[0].owner_name %></h2><br>
+    <h2>owner address: <%=results[0].owner_address %></h2><br>
+    <h2>owner mobile: <%=results[0].owner_number %></h2><br>
+    <table border="1">
+         <tr>
+             <th>number</th>
+             <th>vehicle model</th>
+             <th>reg_date</th>
+        </tr>
+
+        <% results.forEach(function(items) { %>
+
+        <tr>
+            <td><%= items.number %></td>
+            <td><%= items.model %></td>
+            <td><%= items.reg_date %></td>
+        </tr>
+
+       <% });%>
+     </table>
+
+
+     <form action="/fun_blacklist_add_all/<%=results[0].owner_name %>/<%=results[0].owner_address%>/<%=number%>">
+
+         <button type="submit">blacklist all these vehicels</button>
+     </form><br><br>
+     <form action="/home/black">
+         <button type="submit"> dont blacklist these</button>
+     </form>
+     
+<%}%>
+
+
+<% if(choice == -5 ) { %>
+    
+    <h2>enter the vehicle number to remove blacklist</h2>
+        <form action="/fun_blacklist_remove" method="POST">
+    
+           <h3></h3> <input type="text" name="number" ><br><br>
+            <button type="submit">remove blacklist</button>
+        </form>
+    
+     <%}%>
+
+
+     <% if(choice == -6 ) { %>
+
+        <h1>removed from blacklist</h1><br><br><br>
+        <h3>the owner of the vehicle does not have any other vehicles which are </h3>
+    
+        <form action="/home/black">
+        <button type="submit"> go back</button>
+        </form>
+    
+     <%}%>
+
+
+     <% if(choice == 7 ) { %>
+        <h2>the owner has <%= results.length %> vehicle  which are blacklisted</h2><br>
+        <h2>owner name : <%=results[0].owner_name %></h2><br>
+        <h2>owner address: <%=results[0].owner_address %></h2><br>
+        <h2>owner mobile: <%=results[0].owner_number %></h2><br>
+        <table border="1">
+             <tr>
+                 <th>number</th>
+                 <th>vehicle model</th>
+                 <th>reg_date</th>
+            </tr>
+    
+            <% results.forEach(function(items) { %>
+    
+            <tr>
+                <td><%= items.number %></td>
+                <td><%= items.model %></td>
+                <td><%= items.reg_date %></td>
+            </tr>
+    
+           <% });%>
+         </table>
+    
+    
+         <br><br><form action="/fun_blacklist_remove_all/<%=results[0].owner_name %>/<%=results[0].owner_address%>/<%=number%>">
+    
+             <button type="submit">remove all from blacklist</button>
+         </form><br><br>
+         <form action="/home/black">
+             <button type="submit"> dont remove from blacklist</button>
+         </form>
+         
+    <%}%>
+    
+    
+
+
+
+
+</body>
+
+
+</html>

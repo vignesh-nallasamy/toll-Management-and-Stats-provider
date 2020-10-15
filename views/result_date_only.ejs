@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>result for dates:</h1>
+        <% if(choice == -2)  {%>
+       
+            <h2>no entries between given time  in given date</h2><br><br>
+            <% } %>
+        <% if(choice == -1 )  {%>
+       
+            <h2>no entries between the given dates</h2><br><br>
+            <% } %>
+        <% if(choice == 0 )  {%>
+       
+            <h2>no entries on this date</h2><br><br>
+            <% } %>
+        <% if(choice == 1 )  {%>
+           <h1>toll_id:<%=result1[0].toll_id%></h1><br>
+
+           <h2>FROM :<%=result1[0].v_from%> </h2>
+            
+            <table border="1">
+                <tr>
+                    <th>s.no</th>
+                    <th>number</th>
+                    <th>type</th>
+                    <th>FROM</th>
+                    <th>TO</th>
+                    <th>DATE</th>
+                    <th>TIME</th>
+                </tr>
+                <% var count1 = 0;result1.forEach(function(items){  %>
+                    <tr>
+                        <% count1 = count1+1 %>
+                        <td><%=count1%></td>
+                    <td><%=items.number%></td>
+                    <td><%=items.vehicle_type%></td>
+                    <td><%=items.v_from%></td>
+                    <td><%=items.v_to%></td>
+                    <td><%=items.cross_date.toDateString();%></td>
+                    <td><%=items.cross_time%></td>
+                  
+                    
+
+                </tr>
+                <%});%>
+                
+            </table>
+            <table border="1">
+                <tr>
+                    <th>type</th>
+                    <th>count</th>
+                </tr>
+                <% result1_1.forEach(function(items){ %>
+                    <tr>
+                        <td><%=items.vehicle_type%></td>
+                        <td><%=items.count%></td>
+                    </tr>
+                <%});%>
+            </table>
+
+            <h2>FROM :<%=result2[0].v_from%> </h2>
+
+            
+            <table border="1">
+                <tr>
+                    <th>s.no</th>
+                    <th>number</th>
+                    <th>type</th>
+                    <th>FROM</th>
+                    <th>TO</th>
+                    <th>DATE</th>
+                    <th>TIME</th>
+                </tr>
+                <% var count2 = 0;result2.forEach(function(items){  %>
+                    <tr>
+                        <% count2 = count2+1 %>
+                        <td><%=count2%></td>
+                       
+                    <td><%=items.number%></td>
+                    <td><%=items.vehicle_type%></td>
+                    <td><%=items.v_from%></td>
+                    <td><%=items.v_to%></td>
+                    <td><%=items.cross_date.toDateString();%></td>
+                    <td><%=items.cross_time%></td>
+                </tr>
+                <%});%>
+
+                </table>
+                <table border="1" >
+                    <tr>
+                        <th>type</th>
+                        <th>count</th>
+                    </tr>
+                    <% result2_1.forEach(function(items){ %>
+                        <tr>
+                            <td><%=items.vehicle_type%></td>
+                            <td><%=items.count%></td>
+                        </tr>
+                    <%});%>
+                </table><br>
+                <h2>total entries in toll:<%=count1 + count2%></h2>
+                <h2>total entries from <%=result1[0].v_from%> :<%=count1%></h2>
+                <h2>total entries from <%=result2[0].v_from%> :<%=count2%></h2>
+                
+            
+            <% } %> <br><br>
+
+
+
+<form action="/stats">
+<button type="submit">back</button></form>
+            </body>
+</html>

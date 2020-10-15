@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <%  if(choice == "add") { %>
+    <h1> page to add plaza</h1>
+    <form action="/fun_add_plaza" method="POST">
+    <h2>plaza name:</h2><input type="text" name="plaza_name"><br><br>
+    <h2>place 1 :</h2><input type="text" name="place1"><br><br>
+    <h2>place 2 :</h2><input type="text" name="place2"><br><br>
+    <button type="submit">add plaza</button><br><br>
+    </form>
+<%}%>
+ <% if(choice == "del") {%>
+    <h1>page to remove plaza</h1>
+    <form action="/fun_remove_plaza" method="POST">
+    <h2>plaza ID</h2><input type="text" value="-1" name="id" ><br><br>
+    <h2>or</h2><br><br>
+    <h2>plaza name</h2><input type="text" name="name"><br><br>
+    <button type="submit">remove plaza</button>
+    </form>
+
+
+
+ <%}%>
+
+</body>
+
+</html>

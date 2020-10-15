@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <% if(choice == 0) {%>
+            <script>
+                alert('added successfully');
+            </script>
+            <%}%>
+       <% if(choice == 1) {%>
+       <script>
+           alert('not added error !!try again');
+       </script>
+       <%}%>
+        <h1>this add page:</h1>
+        <form action="/add_record" method="post">
+           <h3>number:</h3> <input type="text" name="number">
+           <h3>model</h3><input type="text" name="model">
+           <h3>owner name:</h3><input type="text" name="name">
+           <h3>owner address</h3><input type="text" name="address">
+           <h3>owner mobile:</h3><input type="text"name="mobile" >
+           <h3>reg_date:</h3><input type="date" name="date" >
+           <input type="submit">
+        </form>
+    </body>
+</html>

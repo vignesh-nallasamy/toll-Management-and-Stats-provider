@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>edit portal for number: <%=results[0].number%></h1>
+
+    <form action="/vehicle_info_get" method="POST">
+        <h3>registration_number:</h3> <input type="text" name="number" value="<%=results[0].number%>" disabled><br><br>
+        <h3>Model:</h3> <input type="text" name="model" value="<%=results[0].model%> "><br><br>
+        <h3>regdate:</h3><input type="date" name="date" value=" <%=results[0].reg_date%>"><br><br>
+        <h3>owner_name:</h3><input type="text" name="name" value="<%=results[0].owner_name%> ">
+        <h3>owner_address:</h3><input type="text" name="address" value="<%=results[0].owner_address%> "><br><br>
+        <h3>owner_number:</h3><input type="text" name="mobile" value="<%=results[0].owner_number%> "><br><br>
+        
+        <input type="submit">
+
+
+    </form>
+
+</body>
+</html>

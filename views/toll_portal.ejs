@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <% if(choice == 3) {%>
+        <script>
+            alert('thhis vehicle number is not registered or fakeee!!!!');
+        </script>
+        <%}%>
+   <% if(choice == 2) {%>
+   <script>
+       alert('its a blacklisted vehhicle !!call police!!!');
+   </script>
+   <%}%>
+
+  
+<h1>this is tollgate portal page</h1>
+<div style="text-align: right">
+    <form action="/home/toll">
+        <button type="submit" style="background-color:cornsilk;width: 50px;height: 100px;">change toll or logout</button>
+    </form>
+</div>
+<h1><%= results[0].p_name %> toll plaza...id:<%= results[0].p_id  %></h1>
+<form action="/enter_toll/<%=results[0].p_id%>" method="POST">
+<h3>number:</h3><input type="text" name="number" required><br><br>
+<h3>from:</h3><select name="v_from"  >
+    <option value='<%= results[0].place1 %>'  selected><%= results[0].place1 %></option>
+    <option value='<%= results[0].place2 %>'><%= results[0].place2 %></option>
+</select><br><br>
+<h3>to:</h3><select name="v_to" >
+    <option value="<%= results[0].place2 %>" selected><%= results[0].place2 %></option>
+    <option value="<%= results[0].place1 %>"><%= results[0].place1 %></option>
+</select><br><br>
+<h3>vehicle type:</h3> <select name="type" >  <br>
+<option value="LMV" selected>LMV</option>
+<option value="HMV">HMV</option>
+<option value="TRUCKLOAD">TRUCKLOAD</option></select>
+<h3>fee:</h3><select name="fee" >
+    <option value="0" selected></option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    <option value="500">500</option>
+</select><br>
+<button type="submit"> enter</button>
+
+
+</form>
+
+
+
+
+
+
+</body>
+
+
+</html>

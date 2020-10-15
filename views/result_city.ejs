@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>results:</h1><br>
+
+    <h2>city: <%=name%></h2>
+    <h2>date: <%=date%></h2>
+
+    <% if(choice == 0 ) { %>
+        <h2> no vehhicle entered or exitted thhis city!!!</h2>
+ <%}%>
+    
+<% if(choice == 1) {var enter = 0; %>
+    <h2>details of entering vehicless</h2>
+            <table border="1">
+                <tr>
+                    <th>city</th>
+                    <th>count</th>
+                </tr>
+                <% result1.forEach(function(items) { %>
+                    <tr>
+                        <td><%=items.v_from%></td>
+                        <td><%=items.count%></td>
+
+                    </tr>
+
+    
+    
+    
+                <% enter = enter + parseInt(items.count)});%>
+
+            </table>
+            <h2></h2>total vehicles entered :<%=enter%>  </h2>
+
+            <h1>no vehicles exitted from the city</h1>
+
+
+            <%}%>
+
+            <% if(choice == 2) {var exit = 0; %>
+                <h1>no vehhicle entered this city on this date</h1>
+
+
+                <h1>details of exitted vehicles:</h1>
+                <table border="1">
+                    <tr>
+                        <th>city to</th>
+                        <th>count</th>
+                    </tr>
+                    <% result2.forEach(function(items) { %>
+                        <tr>
+                            <td><%=items.v_to%></td>
+                            <td><%=items.count%></td>
+    
+                        </tr>
+    
+        
+        
+        
+                    <% exit = exit + parseInt(items.count);});%>
+    
+                </table>
+                <br>
+                <h2></h2>total vehicles exitted :<%=exit%>  </h2>
+    
+               
+    
+    
+                <%}%>
+
+
+
+
+
+
+
+
+
+    <%  if(choice == 3) {var enter = 0;var exit = 0; %>
+
+        <table border="1">
+            <tr>
+                <th>city</th>
+                <th>count</th>
+            </tr>
+            <% result1.forEach(function(items) { %>
+                <tr>
+                    <td><%=items.v_from%></td>
+                    <td><%=items.count%></td>
+
+                </tr>
+
+
+
+
+            <% enter = enter + parseInt(items.count);});%>
+
+        </table>
+        <h2></h2>total vehicles entered :<%=enter%>  </h2>
+
+        <br>
+        <h2>vehicles exitting from the city</h2>
+         <table border="1">
+            <tr>
+                <th>city to</th>
+                <th>count</th>
+            </tr>
+            <% result2.forEach(function(items) { %>
+                <tr>
+                    <td><%=items.v_to%></td>
+                    <td><%=items.count%></td>
+                    
+
+                </tr>
+                <%=exit = exit+ parseInt(items.count);%>
+
+
+
+
+            <% });%>
+
+        </table>
+        <h2></h2>total vehicles exitted :<%=exit%>  </h2>
+
+
+
+        <%}%>
+
+
+
+
+
+
+
+        <form action="/stats">
+            <button type="submit">back</button></form>
+                        </body>
+
+
+
+</body>
+</html>

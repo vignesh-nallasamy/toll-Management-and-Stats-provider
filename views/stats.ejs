@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>stats page</h1>
+        <div style="background-color: coral;">
+            <h2>single date and toll</h2>
+            <form action="/date_only" method="POST">
+                <h2>date:</h2><input type="date" name="date" >
+                <h2>toll_id</h2><input type="text" name="toll_id"required >
+                <button type="submit">search</button>
+            </form>
+
+
+        </div>
+
+        <div style="background-color: cyan;">
+            <h2>between to dates:</h2>
+            <form action="/two_dates" method="POST">
+                <h2>from date:</h2><input type="date" name="from_date"required>
+                <h2>to date:</h2><input type="date" name="to_date"required>
+                <h2>toll_id</h2><input type="text" name="toll_id"required >
+                <button type="submit">search</button>
+        </form>
+        </div>
+
+        <div style="background-color: greenyellow;">
+            <h2>single date with time</h2>
+            <form action="/date_with_time" method="POST">
+                <h2>date:</h2><input type="date" name="date"required>
+                <h2>from time:</h2><input type="time" name="from_time"required>
+                <h2>to time:</h2><input type="time" name="to_time" required>
+                <h2>toll_id</h2><input type="text" name="toll_id" required>
+                <button type="submit">search</button>
+            </form>
+
+
+        </div>
+
+        <div style="background-color: rgb(233, 17, 222);">
+            <h2>between two dates and between a time period and toll</h2>
+            <form action="/two_dates_with_time" method="POST">
+                <h2>from date:</h2><input type="date" name="from_date"required>
+                <h2>to date:</h2><input type="date" name="to_date" required>
+                <h2>from time:</h2><input type="time" name="from_time" required>
+                <h2>to time:</h2><input type="time" name="to_time" required>
+                <h2>toll_id</h2><input type="text" name="toll_id" required >
+                <button type="submit">search</button>
+            </form>
+
+
+        </div>
+
+        <div style="background-color: yellow;">
+            <h2>to of vehicles entering and exitting a city</h2>
+            <form action="city_date" method="POST">
+                <h2>city name:</h2><input type="text" name="name" required>
+                <h2>date:</h2><input type="date" name="date" >
+
+                <button type="submit">search</button>
+            </form>
+        </div>
+
+
+
+        <form action="/home/investigate">
+            <button type="submit">back</button>
+        </form>
+    </body>
+</html>

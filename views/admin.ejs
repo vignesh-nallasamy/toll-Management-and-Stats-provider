@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    
+<h1>this is admin  page</h1>
+<h1>welcome <%= name %></h1>
+<% if(number == 1) { %> 
+<table border="1" border>
+    <tr>
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>category</th>
+        <th>email</th>
+        <th>mobile</th>
+    </tr>
+<% results.forEach(function(items){%>
+<tr>
+    <td><%=items.firstname %></td>     
+    <td><%=items.lastname%></td> 
+    <td><%=items.category %></td>
+    <td><%=items.email %></td>
+    <td><%=items.mobilenumber %></td>
+    <td><form action="/delete/<%=items.username%>">
+        <button type="submit">delete</button>
+         </form></td>
+    <td><form action="/edit/<%=items.username%>">
+            <button type="submit">edit</button>
+             </form></td>
+</tr>
+           
+    <%});%>
+
+</table> <%}%> <br><br><br><br>
+    <form action="/add">
+        <button type="submit">add a user</button>
+         </form><br><br><br><br>
+
+      
+
+         <form action="/rto">
+            <button type="submit" >rto portal
+            </button></form><br><br><br><br>
+
+            <form action="/add_plaza">
+                <button type="submit">add a plaza</button>
+                 </form><br><br><br><br>
+                 <form action="/remove_plaza">
+                    <button type="submit">remove a plaza</button>
+                     </form><br><br><br><br>
+
+
+         <form action="/logout">
+        <button type="submit" >logout
+        </button></form>
+
+</body>
+
+
+</html>

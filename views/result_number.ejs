@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+    <h1>RESULTS:</h1><br>
+    <h3>number : <%=car_results.number  %></h3><br>
+    <h3>model: <%=car_results.model %></h3><br>
+    <h3>owner: <%=car_results.owner_name %></h3><br>
+    <h3>address: <%=car_results.owner_address %></h3><br>
+    <h3>mobile: <%=car_results.owner_number %></h3><br><br>
+    <% if(choice == 0 )  {%>
+       
+        <h2>this vehicle did not pass through any of the toll plazas</h2><br><br>
+        <h3>current city : <%=car_results.owner_address %></h3>
+        <% } %>
+    <% if(choice == 1 )  {%>
+       
+        
+        <table border="1">
+            <tr>
+                <th>TOLL</th>
+                <th>FROM</th>
+                <th>TO</th>
+                <th>DATE</th>
+                <th>TIME</th>
+            </tr>
+            <% toll_results.forEach(function(items){  %>
+                <tr>
+                <td><%=items.toll_id%></td>
+                <td><%=items.v_from%></td>
+                <td><%=items.v_to%></td>
+                <td><%=items.cross_date.toDateString();%></td>
+                <td><%=items.cross_time%></td>
+            </tr>
+            <%});%>
+            
+        </table>
+        <h3>lastly entered in city : <%=toll_results[0].v_to %></h3>
+        <% } %> <br><br>
+
+        <form action="/vandi">
+            <button type="submit">back</button>
+        </form>
+\
+
+  
+
+        
+</body>
+
+
+</html>

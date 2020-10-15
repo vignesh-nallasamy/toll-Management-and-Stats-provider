@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <% if(choice == 0 ) { %>
+          <h1>no transactions occured in this date</h1>  
+     <%}%>
+     <% if(choice == 1 ) { %>
+        <h2>DATE:<%=date%></h2>
+        <h2>TOTAL AMOUNT collected:<%=results[0].sum%></h2>
+            
+        <%}%>
+
+        <% if(choice == 2 ) { %>
+            <h2>TOLL_id:<%=id%></h2>
+            <h2>DATE:<%=date%></h2>
+            <h2>TOTAL AMOUNT collected:<%=results[0].sum%></h2>
+            <%}%>
+
+
+            <% if(choice == 3 ) { %>
+                <h2>TOLL_id:<%=id%></h2>
+                <h2>FROM DATE:<%=from_date%></h2>
+                <h2> TO DATE:<%=to_date%></h2>
+                <h2>TOTAL AMOUNT collected:<%=results[0].sum%></h2>
+                <%}%>
+
+
+                <form action="/fee">
+                <button type="submit">back</button></form>
+
+
+    </body>
+</html>

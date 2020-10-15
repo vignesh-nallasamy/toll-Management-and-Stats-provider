@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>RESULTS:</h1><br>
+        <% if(choice == 0 )  {%>
+       
+            <h2>this name and address does not own any vehicle or not registered in rot</h2><br><br>
+            
+            <% } %>
+
+
+            <% if(choice == 1 )  {%>
+       
+                <h3>owner name : <%=results[0].owner_name  %></h3><br>
+                <h3>address : <%=results[0].owner_address %></h3><br>
+
+                <table border="1">
+                    <tr>
+                        <th>number</th>
+                        <th>model</th>
+                        
+                    </tr>
+                    <% results.forEach(function(items){  %>
+                        <tr>
+                        <td><%=items.number%></td>
+                        <td><%=items.model%></td>
+                        <td> <form action="/search_by_number" method="POST">
+                            <input type="text" name="number" value="<%=items.number%>" hidden>
+                            <button type="submit">search</button>
+                        </form></td>
+                        
+                    </tr>
+                    <%});%>
+                    
+                </table>
+                
+                <% } %>
+
+
+    </body>
+</html>

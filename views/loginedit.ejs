@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>edit portal for username: <%=results[0].username%></h1>
+
+    <form action="/finaledit/<%=results[0].username%>" method="POST">
+        <h3>firstname:</h3> <input type="text" name="firstname" value="<%=results[0].firstname%> "><br><br>
+        <h3>lastname:</h3><input type="text" name="lastname" value=" <%=results[0].lastname%>"><br><br>
+        <h3>category:</h3><input type="text" name="category" value="<%=results[0].category%> ">
+        <h3>Email:</h3><input type="text" name="email" value="<%=results[0].email%> "><br><br>
+        <h3>password:</h3><input type="text" name="password" value="<%=results[0].password%> "><br><br>
+        <h3>mobile:</h3><input type="text" name="mobile" value="<%=results[0].mobilenumber%>">
+        <input type="submit">
+
+
+    </form>
+
+</body>
+</html>

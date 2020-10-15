@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>fee page : </h1>
+
+        <div style="background-color: gold;">
+        <form action="/entire_amount" method="POST">
+            <h2>to get total amount collected by ALL TOLL PLAZAS</h2>
+            <h2>date:</h2><input type="date" name="date"  >
+             <button type="submit">click</button>
+        </form>
+    </div>
+    <div style="background-color: greenyellow;">
+    <h2>particular toll</h2>
+    <form action="toll_amount" method="POST">
+        <h2>toll ID</h2><input type="text" name="toll_id" required>
+        <h2>date:</h2><input type="date" name="date"  >
+        <button type="submit">click</button>
+
+    </form>
+    </div>
+
+    <div style="background-color:red;">
+    <h2>particular toll between dates:</h2>
+    <form action="toll_amount_dates" method="POST">
+        <h2>toll ID</h2><input type="text" name="toll_id" required>
+        <h2>from date:</h2><input type="date" name="from_date"  >
+        <h2>to date:</h2><input type="date" name="to_date">
+        <button type="submit">click</button>
+
+    </form>
+    </div>
+
+
+
+        
+           
+    <form action="/home/investigate">
+        <button type="submit">back</button></form>
+    </body>
+</html>
